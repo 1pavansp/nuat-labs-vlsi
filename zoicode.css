@@ -473,34 +473,205 @@
 }
 
 /* ============================================
-   Responsive Design
+   Responsive Design - Mobile First
    ============================================ */
-@media (max-width: 968px) {
+
+/* Laptop (1024px - 1200px) */
+@media (max-width: 1200px) {
+    .container-wide {
+        max-width: 1100px;
+    }
+}
+
+/* Tablet Landscape (768px - 1023px) */
+@media (max-width: 1023px) {
+    .zoi-title {
+        font-size: 3.5rem;
+        line-height: 1.15;
+    }
+
+    .zoi-subtitle {
+        font-size: 1.125rem;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Tablet Portrait (768px - 967px) */
+@media (max-width: 967px) {
+    .zoi-hero {
+        padding: calc(70px + 3rem) 0 3rem;
+    }
+
     .zoi-title {
         font-size: 3rem;
     }
 
     .zoi-stats {
-        gap: 2rem;
+        gap: 2.5rem;
+    }
+
+    .stat-number {
+        font-size: 2.25rem;
     }
 
     .categories-grid {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+
+    .category-card {
+        padding: 1.75rem;
     }
 
     .problem-item {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+        grid-template-columns: auto 1fr;
+        gap: 1.25rem;
+        padding: 1.25rem;
+    }
+
+    .problem-metrics {
+        grid-column: 1 / -1;
+        justify-content: flex-start;
     }
 
     .problems-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 1rem;
+        gap: 1.25rem;
+    }
+
+    .problem-filters {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 }
 
-@media (max-width: 640px) {
+/* Mobile Large (481px - 767px) */
+@media (max-width: 767px) {
+    .zoi-hero {
+        padding: calc(60px + 2rem) 0 2rem;
+    }
+
+    .code-badge {
+        font-size: 0.8125rem;
+        padding: 0.5rem 0.875rem;
+    }
+
+    .zoi-title {
+        font-size: 2.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .zoi-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .zoi-stats {
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+        margin-bottom: 0.375rem;
+    }
+
+    .stat-text {
+        font-size: 0.8125rem;
+    }
+
+    .section-heading {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .category-card {
+        padding: 1.5rem;
+    }
+
+    .category-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .problems-section {
+        padding: 4rem 0;
+    }
+
+    .problems-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .problem-filters {
+        gap: 0.375rem;
+    }
+
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8125rem;
+        white-space: nowrap;
+    }
+
+    .problem-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .problem-status {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+
+    .problem-title {
+        font-size: 1rem;
+    }
+
+    .problem-tags {
+        flex-wrap: wrap;
+    }
+
+    .problem-tag {
+        font-size: 0.6875rem;
+        padding: 0.1875rem 0.625rem;
+    }
+
+    .difficulty-badge {
+        padding: 0.375rem 0.75rem;
+        font-size: 0.75rem;
+    }
+
+    .footer-compact {
+        padding: 1.5rem 0;
+    }
+
+    .footer-compact .container {
+        flex-direction: column;
+        gap: 1.25rem;
+        text-align: center;
+    }
+
+    .footer-links-compact {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+}
+
+/* Mobile Medium (414px - 480px) */
+@media (max-width: 480px) {
     .zoi-title {
         font-size: 2.25rem;
     }
@@ -510,16 +681,166 @@
         gap: 1.5rem;
     }
 
-    .footer-compact .container {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
+    .zoi-stat {
+        width: 100%;
+    }
+
+    .section-heading {
+        font-size: 1.75rem;
+    }
+
+    .category-card h3 {
+        font-size: 1.125rem;
+    }
+
+    .category-card p {
+        font-size: 0.875rem;
+    }
+}
+
+/* Mobile Small (375px - 413px) */
+@media (max-width: 413px) {
+    .zoi-title {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .categories-section,
+    .problems-section {
+        padding: 3.5rem 0;
+    }
+
+    .category-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .problem-item {
+        padding: 0.875rem;
+    }
+}
+
+/* Mobile Extra Small (< 375px) */
+@media (max-width: 374px) {
+    .zoi-title {
+        font-size: 1.875rem;
+    }
+
+    .stat-number {
+        font-size: 1.75rem;
+    }
+
+    .section-heading {
+        font-size: 1.625rem;
     }
 }
 
 /* ============================================
-   Leaderboard Styles
+   Leaderboard Styles - Responsive
    ============================================ */
+
+/* Leaderboard Mobile Adaptations */
+@media (max-width: 1023px) {
+    .leaderboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .your-stats-card {
+        position: static;
+        order: -1;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+
+    .page-subtitle {
+        font-size: 1rem;
+    }
+
+    .podium-section {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .rank-1,
+    .rank-2,
+    .rank-3 {
+        order: initial;
+    }
+
+    .podium-medal {
+        font-size: 2.5rem;
+    }
+
+    .podium-avatar {
+        width: 70px;
+        height: 70px;
+        font-size: 1.25rem;
+    }
+
+    .podium-name {
+        font-size: 1.125rem;
+    }
+
+    .podium-score {
+        font-size: 1.75rem;
+    }
+
+    .table-header,
+    .table-row {
+        grid-template-columns: 60px 1fr 100px;
+    }
+
+    .col-solved,
+    .col-streak {
+        display: none;
+    }
+
+    .your-stats-card h3 {
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .leaderboard-filters {
+        gap: 0.5rem;
+    }
+
+    .filter-btn {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.8125rem;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .table-header,
+    .table-row {
+        grid-template-columns: 50px 1fr 90px;
+        padding: 0.75rem 1rem;
+    }
+
+    .user-avatar {
+        width: 32px;
+        height: 32px;
+        font-size: 0.75rem;
+    }
+
+    .user-name {
+        font-size: 0.875rem;
+    }
+
+    .col-score {
+        font-size: 0.875rem;
+    }
+}
+
+/* Original Leaderboard Styles */
 .leaderboard-section {
     padding: calc(80px + 3rem) 0 3rem;
     min-height: 100vh;

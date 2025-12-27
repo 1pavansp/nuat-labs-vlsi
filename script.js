@@ -445,6 +445,27 @@ function initSuccessCarousel() {
 }
 
 // ============================================
+// Mobile Navigation
+// ============================================
+const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+const mobileOverlay = document.getElementById('mobileOverlay');
+
+if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', () => {
+        mobileNavDrawer.classList.toggle('active');
+        mobileOverlay.classList.toggle('active');
+        document.body.style.overflow = mobileNavDrawer.classList.contains('active') ? 'hidden' : '';
+    });
+
+    mobileOverlay.addEventListener('click', () => {
+        mobileNavDrawer.classList.remove('active');
+        mobileOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+}
+
+// ============================================
 // Header Scroll Effect
 // ============================================
 function initHeaderScroll() {
