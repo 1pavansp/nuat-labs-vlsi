@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Interviews - ZOI Code | NUAT Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="zoicode.css">
+</head>
+
+<body class="zoicode-page">
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" style="display: flex; align-items: center; gap: 1rem; text-decoration: none;">
+                    <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+                        <rect width="40" height="40" rx="8" fill="url(#chipGradient)" />
+                        <rect x="8" y="8" width="24" height="24" rx="2" fill="#0A0A0A" stroke="#00A3E0"
+                            stroke-width="1" />
+                        <circle cx="20" cy="20" r="4" fill="#00A3E0" />
+                        <defs>
+                            <linearGradient id="chipGradient" x1="0" y1="0" x2="40" y2="40">
+                                <stop offset="0%" stop-color="#0066CC" />
+                                <stop offset="100%" stop-color="#00A3E0" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span class="logo-text" style="font-size: 1.25rem;">ZOI Code</span>
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="zoicode.html" class="nav-link">Problems</a>
+                <a href="leaderboard.html" class="nav-link">Leaderboard</a>
+                <a href="discuss.html" class="nav-link">Discuss</a>
+                <a href="interviews.html" class="nav-link nav-link-active">Interviews</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-ghost">Sign In</button>
+                <button class="btn btn-primary">Get Started</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="interviews-section">
+        <div class="container">
+            <div class="interviews-header">
+                <h1 class="page-title">Company Interview Questions</h1>
+                <p class="page-subtitle">Real VLSI interview questions from top semiconductor companies</p>
+            </div>
+
+            <!-- Company Filters -->
+            <div class="company-filter-section">
+                <button class="company-filter-btn active" data-company="all">All Companies</button>
+                <button class="company-filter-btn" data-company="nvidia">🎮 NVIDIA</button>
+                <button class="company-filter-btn" data-company="intel">💻 Intel</button>
+                <button class="company-filter-btn" data-company="amd">🖥️ AMD</button>
+                <button class="company-filter-btn" data-company="qualcomm">📱 Qualcomm</button>
+                <button class="company-filter-btn" data-company="tsmc">🏭 TSMC</button>
+                <button class="company-filter-btn" data-company="broadcom">🌐 Broadcom</button>
+            </div>
+
+            <!-- Interview Questions List -->
+            <div class="interview-questions-list" id="interviewQuestions">
+                <!-- Questions will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const interviewQuestions = [
+            { company: "nvidia", logo: "🎮", question: "Design a parameterizable FIFO with configurable depth and width", difficulty: "medium", topic: "RTL Design", frequency: "Very High", year: "2024" },
+            { company: "nvidia", logo: "🎮", question: "Implement a clock domain crossing synchronizer for high-speed GPU interfaces", difficulty: "hard", topic: "CDC", frequency: "High", year: "2024" },
+            { company: "nvidia", logo: "🎮", question: "Create a priority encoder for 32-bit input vector", difficulty: "easy", topic: "Combinational", frequency: "Medium", year: "2023" },
+
+            { company: "intel", logo: "💻", question: "Design a cache controller with LRU replacement policy", difficulty: "hard", topic: "Memory Systems", frequency: "Very High", year: "2024" },
+            { company: "intel", logo: "💻", question: "Implement branch predictor logic for CPU pipeline", difficulty: "hard", topic: "CPU Design", frequency: "High", year: "2024" },
+            { company: "intel", logo: "💻", question: "Create a power gating controller with retention", difficulty: "medium", topic: "Low Power", frequency: "High", year: "2023" },
+
+            { company: "amd", logo: "🖥️", question: "Design memory controller for DDR5 interface", difficulty: "hard", topic: "Memory Interface", frequency: "High", year: "2024" },
+            { company: "amd", logo: "🖥️", question: "Implement PCIe Gen5 transaction layer logic", difficulty: "hard", topic: "Protocol", frequency: "Very High", year: "2024" },
+            { company: "amd", logo: "🖥️", question: "Create thermal management controller with DVFS", difficulty: "medium", topic: "Power Management", frequency: "Medium", year: "2023" },
+
+            { company: "qualcomm", logo: "📱", question: "Design low-power FSM for mobile SoC power states", difficulty: "medium", topic: "FSM & Low Power", frequency: "Very High", year: "2024" },
+            { company: "qualcomm", logo: "📱", question: "Implement DVFS controller for ARM cores", difficulty: "medium", topic: "Power Management", frequency: "High", year: "2024" },
+            { company: "qualcomm", logo: "📱", question: "Create UART transmitter with baud rate generator", difficulty: "easy", topic: "Serial Protocol", frequency: "High", year: "2023" },
+
+            { company: "tsmc", logo: "🏭", question: "Debug DRC violations in standard cell layout", difficulty: "hard", topic: "Physical Design", frequency: "Very High", year: "2024" },
+            { company: "tsmc", logo: "🏭", question: "Optimize metal layer routing for 3nm process", difficulty: "hard", topic: "Backend", frequency: "High", year: "2024" },
+            { company: "tsmc", logo: "🏭", question: "Analyze LVS mismatch in digital block", difficulty: "medium", topic: "Verification", frequency: "High", year: "2023" },
+
+            { company: "broadcom", logo: "🌐", question: "Design packet buffer with priority queues", difficulty: "hard", topic: "Networking", frequency: "Very High", year: "2024" },
+            { company: "broadcom", logo: "🌐", question: "Implement Ethernet MAC layer state machine", difficulty: "medium", topic: "Protocol", frequency: "High", year: "2024" },
+            { company: "broadcom", logo: "🌐", question: "Create traffic shaper for network QoS", difficulty: "medium", topic: "Networking", frequency: "Medium", year: "2023" }
+        ];
+
+        function renderQuestions(filter = 'all') {
+            const container = document.getElementById('interviewQuestions');
+            const filtered = filter === 'all' ? interviewQuestions : interviewQuestions.filter(q => q.company === filter);
+
+            container.innerHTML = filtered.map(q => `
+                <div class="interview-card">
+                    <div class="card-header">
+                        <div class="company-badge">${q.logo} ${q.company.toUpperCase()}</div>
+                        <div class="difficulty-badge difficulty-${q.difficulty}">${q.difficulty}</div>
+                    </div>
+                    <h3 class="question-title">${q.question}</h3>
+                    <div class="question-meta">
+                        <span class="meta-item">📚 ${q.topic}</span>
+                        <span class="meta-item">🔥 ${q.frequency}</span>
+                        <span class="meta-item">📅 ${q.year}</span>
+                    </div>
+                    <button class="btn btn-outline btn-sm">View Solution</button>
+                </div>
+            `).join('');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderQuestions();
+
+            document.querySelectorAll('.company-filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.company-filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    renderQuestions(btn.dataset.company);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

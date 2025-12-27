@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZOI Code - VLSI Coding Challenges | NUAT Labs</title>
+    <meta name="description"
+        content="Practice VLSI design challenges. Master Verilog, VHDL, RTL design, verification, and semiconductor engineering with real-world problems.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="zoicode.css">
+</head>
+
+<body class="zoicode-page">
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" style="display: flex; align-items: center; gap: 1rem; text-decoration: none;">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <rect width="40" height="40" rx="8" fill="url(#chipGradient)" />
+                        <rect x="8" y="8" width="24" height="24" rx="2" fill="#0A0A0A" stroke="#00A3E0"
+                            stroke-width="1" />
+                        <line x1="4" y1="12" x2="8" y2="12" stroke="#C0C0C0" stroke-width="1.5" />
+                        <line x1="4" y1="20" x2="8" y2="20" stroke="#C0C0C0" stroke-width="1.5" />
+                        <line x1="4" y1="28" x2="8" y2="28" stroke="#C0C0C0" stroke-width="1.5" />
+                        <line x1="32" y1="12" x2="36" y2="12" stroke="#C0C0C0" stroke-width="1.5" />
+                        <line x1="32" y1="20" x2="36" y2="20" stroke="#C0C0C0" stroke-width="1.5" />
+                        <line x1="32" y1="28" x2="36" y2="28" stroke="#C0C0C0" stroke-width="1.5" />
+                        <circle cx="20" cy="20" r="4" fill="#00A3E0" />
+                        <defs>
+                            <linearGradient id="chipGradient" x1="0" y1="0" x2="40" y2="40">
+                                <stop offset="0%" stop-color="#0066CC" />
+                                <stop offset="100%" stop-color="#00A3E0" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span class="logo-text">NUAT <span class="logo-labs">Labs</span></span>
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="zoicode.html" class="nav-link nav-link-active">ZOI Code</a>
+                <a href="#" class="nav-link">Leaderboard</a>
+                <a href="#" class="nav-link">Discuss</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-ghost">Sign In</button>
+                <button class="btn btn-primary">Get Started</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="zoi-hero">
+        <canvas id="logicGateCanvas" class="logic-gate-bg"></canvas>
+        <div class="container">
+            <div class="hero-content-center">
+                <div class="code-badge">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M8 6L4 12L8 18M16 6L20 12L16 18M14 4L10 20" stroke="#00FF41" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+                    <span>VLSI Challenges</span>
+                </div>
+                <h1 class="zoi-title">
+                    Master <span class="highlight-code">Hardware Design</span><br>One Problem at a Time
+                </h1>
+                <p class="zoi-subtitle">
+                    Practice Verilog, VHDL, RTL design, and verification with real-world semiconductor challenges.
+                    From basic gates to complex SoC architectures.
+                </p>
+                <div class="zoi-stats">
+                    <div class="zoi-stat">
+                        <div class="stat-number">150+</div>
+                        <div class="stat-text">Problems</div>
+                    </div>
+                    <div class="zoi-stat">
+                        <div class="stat-number">8</div>
+                        <div class="stat-text">Categories</div>
+                    </div>
+                    <div class="zoi-stat">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-text">Engineers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="container">
+            <h2 class="section-heading">Challenge Categories</h2>
+            <div class="categories-grid">
+                <div class="category-card" data-category="rtl">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect x="8" y="16" width="12" height="16" stroke="#0066CC" stroke-width="2" />
+                            <rect x="28" y="16" width="12" height="16" stroke="#0066CC" stroke-width="2" />
+                            <line x1="20" y1="24" x2="28" y2="24" stroke="#00A3E0" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3>RTL Design</h3>
+                    <p>Verilog & VHDL coding challenges</p>
+                    <div class="category-count">45 problems</div>
+                </div>
+
+                <div class="category-card" data-category="verification">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="16" stroke="#0066CC" stroke-width="2" />
+                            <path d="M16 24L22 30L32 18" stroke="#00FF41" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3>Verification</h3>
+                    <p>Testbench & UVM challenges</p>
+                    <div class="category-count">28 problems</div>
+                </div>
+
+                <div class="category-card" data-category="fsm">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="18" cy="18" r="6" stroke="#0066CC" stroke-width="2" />
+                            <circle cx="30" cy="30" r="6" stroke="#0066CC" stroke-width="2" />
+                            <path d="M23 21L27 27" stroke="#00A3E0" stroke-width="2" marker-end="url(#arrow)" />
+                            <defs>
+                                <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                                    <path d="M0 0 L10 5 L0 10 Z" fill="#00A3E0" />
+                                </marker>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3>FSM Design</h3>
+                    <p>State machine problems</p>
+                    <div class="category-count">22 problems</div>
+                </div>
+
+                <div class="category-card" data-category="synthesis">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect x="12" y="12" width="10" height="10" fill="#0066CC" />
+                            <rect x="26" y="12" width="10" height="10" fill="#00A3E0" />
+                            <rect x="12" y="26" width="10" height="10" fill="#00A3E0" />
+                            <rect x="26" y="26" width="10" height="10" fill="#0066CC" />
+                        </svg>
+                    </div>
+                    <h3>Synthesis</h3>
+                    <p>Logic optimization</p>
+                    <div class="category-count">18 problems</div>
+                </div>
+
+                <div class="category-card" data-category="timing">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="14" stroke="#0066CC" stroke-width="2" />
+                            <line x1="24" y1="14" x2="24" y2="24" stroke="#00A3E0" stroke-width="2" />
+                            <line x1="24" y1="24" x2="32" y2="24" stroke="#00A3E0" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3>Timing Analysis</h3>
+                    <p>Setup & hold violations</p>
+                    <div class="category-count">15 problems</div>
+                </div>
+
+                <div class="category-card" data-category="lowpower">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 8L18 24H26L20 40L30 22H22L24 8Z" stroke="#00FF41" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3>Low Power</h3>
+                    <p>Power optimization</p>
+                    <div class="category-count">12 problems</div>
+                </div>
+
+                <div class="category-card" data-category="cdc">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect x="8" y="18" width="14" height="12" stroke="#0066CC" stroke-width="2" />
+                            <rect x="26" y="18" width="14" height="12" stroke="#0066CC" stroke-width="2" />
+                            <path d="M22 24L26 24" stroke="#00A3E0" stroke-width="2" stroke-dasharray="2 2" />
+                        </svg>
+                    </div>
+                    <h3>CDC</h3>
+                    <p>Clock domain crossing</p>
+                    <div class="category-count">10 problems</div>
+                </div>
+
+                <div class="category-card" data-category="physical">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect x="10" y="10" width="28" height="28" stroke="#0066CC" stroke-width="2" />
+                            <line x1="10" y1="20" x2="38" y2="20" stroke="#00A3E0" stroke-width="1" />
+                            <line x1="10" y1="28" x2="38" y2="28" stroke="#00A3E0" stroke-width="1" />
+                            <line x1="20" y1="10" x2="20" y2="38" stroke="#00A3E0" stroke-width="1" />
+                            <line x1="28" y1="10" x2="28" y2="38" stroke="#00A3E0" stroke-width="1" />
+                        </svg>
+                    </div>
+                    <h3>Physical Design</h3>
+                    <p>Place & route challenges</p>
+                    <div class="category-count">8 problems</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems List Section -->
+    <section class="problems-section">
+        <div class="container-wide">
+            <div class="problems-header">
+                <h2>Featured Challenges</h2>
+                <div class="problem-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="easy">Easy</button>
+                    <button class="filter-btn" data-filter="medium">Medium</button>
+                    <button class="filter-btn" data-filter="hard">Hard</button>
+                </div>
+            </div>
+
+            <div class="problems-list" id="problemsList">
+                <!-- Problems will be dynamically generated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-compact">
+        <div class="container">
+            <p>© 2024 NUAT Labs. Master VLSI design through practice.</p>
+            <div class="footer-links-compact">
+                <a href="index.html">Home</a>
+                <a href="#">About</a>
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="zoicode.js"></script>
+</body>
+
+</html>

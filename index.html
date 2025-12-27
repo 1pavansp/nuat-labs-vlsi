@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUAT Labs - Advanced VLSI Semiconductor Solutions</title>
+    <meta name="description"
+        content="Leading VLSI semiconductor design and manufacturing ecosystem. From RTL to silicon - innovative chip solutions for the future.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Circuit Board Background Layer -->
+    <canvas id="circuitCanvas" class="circuit-bg-canvas"></canvas>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <rect width="40" height="40" rx="8" fill="url(#chipGradient)" />
+                    <rect x="8" y="8" width="24" height="24" rx="2" fill="#0A0A0A" stroke="#00A3E0" stroke-width="1" />
+                    <line x1="4" y1="12" x2="8" y2="12" stroke="#C0C0C0" stroke-width="1.5" />
+                    <line x1="4" y1="20" x2="8" y2="20" stroke="#C0C0C0" stroke-width="1.5" />
+                    <line x1="4" y1="28" x2="8" y2="28" stroke="#C0C0C0" stroke-width="1.5" />
+                    <line x1="32" y1="12" x2="36" y2="12" stroke="#C0C0C0" stroke-width="1.5" />
+                    <line x1="32" y1="20" x2="36" y2="20" stroke="#C0C0C0" stroke-width="1.5" />
+                    <line x1="32" y1="28" x2="36" y2="28" stroke="#C0C0C0" stroke-width="1.5" />
+                    <circle cx="20" cy="20" r="4" fill="#00A3E0" />
+                    <defs>
+                        <linearGradient id="chipGradient" x1="0" y1="0" x2="40" y2="40">
+                            <stop offset="0%" stop-color="#0066CC" />
+                            <stop offset="100%" stop-color="#00A3E0" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text">NUAT <span class="logo-labs">Labs</span></span>
+            </div>
+            <nav class="nav">
+                <div class="nav-item">
+                    <button class="nav-link">Technology <span class="arrow">▼</span></button>
+                </div>
+                <div class="nav-item">
+                    <button class="nav-link">Services <span class="arrow">▼</span></button>
+                </div>
+                <div class="nav-item">
+                    <a href="zoicode.html" class="nav-link nav-link-special">ZOI Code</a>
+                </div>
+                <div class="nav-item">
+                    <button class="nav-link">Solutions <span class="arrow">▼</span></button>
+                </div>
+                <div class="nav-item">
+                    <button class="nav-link">Resources <span class="arrow">▼</span></button>
+                </div>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-ghost">Portal</button>
+                <button class="btn btn-primary">Contact Us</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero semiconductor-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="chip-badge fade-in-up">
+                    <span class="process-node">3nm</span>
+                    <span class="badge-text">Process Technology</span>
+                </div>
+                <h1 class="hero-title fade-in-up delay-1">
+                    Engineering the <span class="highlight-silicon">Silicon Future</span>
+                </h1>
+                <p class="hero-subtitle fade-in-up delay-2">
+                    Advanced VLSI design and semiconductor solutions from concept to production.
+                    Transforming innovation into silicon reality with cutting-edge technology nodes.
+                </p>
+                <div class="hero-actions fade-in-up delay-3">
+                    <button class="btn btn-primary btn-large">Explore Our Technology</button>
+                    <button class="btn btn-outline btn-large">View IP Cores</button>
+                </div>
+                <div class="tech-stats fade-in-up delay-4">
+                    <div class="stat-item">
+                        <div class="stat-value" data-target="500">0</div>
+                        <div class="stat-label">Tape-outs</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" data-target="3">0</div>
+                        <div class="stat-label">nm Process</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" data-target="50">0</div>
+                        <div class="stat-label">IP Cores</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" data-target="99.9">0</div>
+                        <div class="stat-label">% Yield Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Silicon Wafer Animation -->
+        <div class="wafer-container">
+            <div class="silicon-wafer">
+                <div class="wafer-dies"></div>
+                <div class="wafer-reflection"></div>
+            </div>
+        </div>
+        <!-- Electron Flow Particles -->
+        <canvas id="electronCanvas" class="electron-canvas"></canvas>
+    </section>
+
+    <!-- Technology Nodes Section -->
+    <section class="tech-nodes-section dark-section">
+        <div class="crystal-lattice-bg"></div>
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="pill-label">PROCESS TECHNOLOGY</div>
+                <h2 class="section-title">From <span class="highlight-gold">180nm</span> to <span
+                        class="highlight-blue">3nm</span></h2>
+                <p class="section-description">
+                    Industry-leading process nodes delivering exceptional performance, power efficiency, and density.
+                </p>
+            </div>
+            <div class="process-timeline animate-on-scroll">
+                <div class="timeline-node" data-node="180nm">
+                    <div class="node-marker"></div>
+                    <div class="node-info">
+                        <div class="node-size">180nm</div>
+                        <div class="node-year">2000</div>
+                    </div>
+                </div>
+                <div class="timeline-node" data-node="90nm">
+                    <div class="node-marker"></div>
+                    <div class="node-info">
+                        <div class="node-size">90nm</div>
+                        <div class="node-year">2004</div>
+                    </div>
+                </div>
+                <div class="timeline-node" data-node="45nm">
+                    <div class="node-marker"></div>
+                    <div class="node-info">
+                        <div class="node-size">45nm</div>
+                        <div class="node-year">2008</div>
+                    </div>
+                </div>
+                <div class="timeline-node" data-node="28nm">
+                    <div class="node-marker"></div>
+                    <div class="node-info">
+                        <div class="node-size">28nm</div>
+                        <div class="node-year">2011</div>
+                    </div>
+                </div>
+                <div class="timeline-node" data-node="14nm">
+                    <div class="node-marker"></div>
+                    <div class="node-info">
+                        <div class="node-size">14nm</div>
+                        <div class="node-year">2014</div>
+                    </div>
+                </div>
+                <div class="timeline-node" data-node="7nm">
+                    <div class="node-marker"></div>
+                    <div class="node-info">
+                        <div class="node-size">7nm</div>
+                        <div class="node-year">2018</div>
+                    </div>
+                </div>
+                <div class="timeline-node active" data-node="3nm">
+                    <div class="node-marker"></div>
+                    <div class="node-info">
+                        <div class="node-size">3nm</div>
+                        <div class="node-year">2024</div>
+                    </div>
+                </div>
+                <div class="timeline-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Services Section -->
+    <section class="design-services-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="pill-label">DESIGN SERVICES</div>
+                <h2 class="section-title">Complete <span class="highlight-blue">RTL to GDSII</span> Flow</h2>
+                <p class="section-description">
+                    End-to-end VLSI design services with industry-leading tools and methodologies
+                </p>
+            </div>
+            <div class="design-pipeline animate-on-scroll">
+                <div class="pipeline-stage">
+                    <div class="stage-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect x="8" y="8" width="32" height="32" rx="4" stroke="#0066CC" stroke-width="2" />
+                            <path d="M16 24L22 18L28 30L32 20" stroke="#00A3E0" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3 class="stage-title">RTL Design</h3>
+                    <p class="stage-description">Verilog/VHDL coding with advanced verification</p>
+                </div>
+                <div class="pipeline-arrow">→</div>
+                <div class="pipeline-stage">
+                    <div class="stage-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="16" stroke="#0066CC" stroke-width="2" />
+                            <path d="M24 12V24L32 28" stroke="#00A3E0" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3 class="stage-title">Synthesis</h3>
+                    <p class="stage-description">Logic optimization and gate-level netlist</p>
+                </div>
+                <div class="pipeline-arrow">→</div>
+                <div class="pipeline-stage">
+                    <div class="stage-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect x="10" y="10" width="12" height="12" fill="#0066CC" />
+                            <rect x="26" y="10" width="12" height="12" fill="#00A3E0" />
+                            <rect x="10" y="26" width="12" height="12" fill="#00A3E0" />
+                            <rect x="26" y="26" width="12" height="12" fill="#0066CC" />
+                        </svg>
+                    </div>
+                    <h3 class="stage-title">Place & Route</h3>
+                    <p class="stage-description">Physical implementation and timing closure</p>
+                </div>
+                <div class="pipeline-arrow">→</div>
+                <div class="pipeline-stage">
+                    <div class="stage-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect x="12" y="12" width="24" height="24" stroke="#0066CC" stroke-width="2" />
+                            <line x1="18" y1="18" x2="30" y2="18" stroke="#00A3E0" stroke-width="1" />
+                            <line x1="18" y1="24" x2="30" y2="24" stroke="#00A3E0" stroke-width="1" />
+                            <line x1="18" y1="30" x2="30" y2="30" stroke="#00A3E0" stroke-width="1" />
+                        </svg>
+                    </div>
+                    <h3 class="stage-title">GDSII</h3>
+                    <p class="stage-description">Tape-out ready layout database</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IP Cores Section with 3D Chip -->
+    <section class="ip-cores-section dark-section">
+        <div class="container">
+            <div class="ip-grid">
+                <div class="ip-content animate-on-scroll">
+                    <div class="pill-label">IP PORTFOLIO</div>
+                    <h2 class="section-title">Silicon-Proven <span class="highlight-gold">IP Cores</span></h2>
+                    <p class="section-description">
+                        Pre-verified, production-ready intellectual property for faster time-to-market
+                    </p>
+                    <div class="ip-categories">
+                        <div class="ip-category">
+                            <div class="category-icon">🔌</div>
+                            <div class="category-info">
+                                <h4>Interface IPs</h4>
+                                <p>USB, PCIe, DDR, MIPI</p>
+                            </div>
+                        </div>
+                        <div class="ip-category">
+                            <div class="category-icon">🧮</div>
+                            <div class="category-info">
+                                <h4>Processing Cores</h4>
+                                <p>ARM, RISC-V, DSP</p>
+                            </div>
+                        </div>
+                        <div class="ip-category">
+                            <div class="category-icon">🔐</div>
+                            <div class="category-info">
+                                <h4>Security IPs</h4>
+                                <p>AES, SHA, PKI, RNG</p>
+                            </div>
+                        </div>
+                        <div class="ip-category">
+                            <div class="category-icon">📡</div>
+                            <div class="category-info">
+                                <h4>Connectivity</h4>
+                                <p>WiFi, Bluetooth, 5G</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline-light">Browse IP Library →</button>
+                </div>
+                <div class="ip-visual animate-on-scroll delay-2">
+                    <div class="chip-3d-container">
+                        <div class="chip-3d">
+                            <div class="chip-face chip-front">
+                                <div class="chip-grid"></div>
+                                <div class="chip-label">NUAT-IP-2024</div>
+                            </div>
+                            <div class="chip-face chip-back">
+                                <div class="pin-grid"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signal Waveform Section -->
+    <section class="signal-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="pill-label">VERIFICATION & VALIDATION</div>
+                <h2 class="section-title">Comprehensive <span class="highlight-blue">Testing Solutions</span></h2>
+                <p class="section-description">
+                    Industry-standard verification methodologies ensuring first-silicon success
+                </p>
+            </div>
+            <div class="verification-grid">
+                <div class="verification-card animate-on-scroll">
+                    <canvas id="signalCanvas1" class="signal-canvas" width="400" height="200"></canvas>
+                    <h3 class="card-title">Functional Verification</h3>
+                    <p class="card-description">UVM/OVM testbenches with full coverage analysis</p>
+                </div>
+                <div class="verification-card animate-on-scroll delay-1">
+                    <canvas id="signalCanvas2" class="signal-canvas" width="400" height="200"></canvas>
+                    <h3 class="card-title">Timing Analysis</h3>
+                    <p class="card-description">Static timing analysis across all operating conditions</p>
+                </div>
+                <div class="verification-card animate-on-scroll delay-2">
+                    <canvas id="signalCanvas3" class="signal-canvas" width="400" height="200"></canvas>
+                    <h3 class="card-title">Power Analysis</h3>
+                    <p class="card-description">Dynamic and static power optimization</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manufacturing Ecosystem -->
+    <section class="manufacturing-section dark-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="pill-label">MANUFACTURING ECOSYSTEM</div>
+                <h2 class="section-title">Global <span class="highlight-gold">Foundry Partners</span></h2>
+                <p class="section-description">
+                    Strategic partnerships with leading semiconductor foundries worldwide
+                </p>
+            </div>
+            <div class="manufacturing-flow animate-on-scroll">
+                <div class="flow-stage">
+                    <div class="stage-number">01</div>
+                    <h3>Mask Preparation</h3>
+                    <p>Photolithography mask generation</p>
+                </div>
+                <div class="flow-connector"></div>
+                <div class="flow-stage">
+                    <div class="stage-number">02</div>
+                    <h3>Wafer Fabrication</h3>
+                    <p>Multi-layer silicon processing</p>
+                </div>
+                <div class="flow-connector"></div>
+                <div class="flow-stage">
+                    <div class="stage-number">03</div>
+                    <h3>Testing & QA</h3>
+                    <p>Comprehensive verification</p>
+                </div>
+                <div class="flow-connector"></div>
+                <div class="flow-stage">
+                    <div class="stage-number">04</div>
+                    <h3>Packaging</h3>
+                    <p>Final assembly & delivery</p>
+                </div>
+            </div>
+            <div class="partner-logos animate-on-scroll">
+                <div class="partner-logo">TSMC</div>
+                <div class="partner-logo">Samsung</div>
+                <div class="partner-logo">Intel</div>
+                <div class="partner-logo">GlobalFoundries</div>
+                <div class="partner-logo">UMC</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="success-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="pill-label">SUCCESS STORIES</div>
+                <h2 class="section-title">Proven Track Record</h2>
+            </div>
+            <div class="success-carousel">
+                <div class="success-card active">
+                    <div class="success-content animate-on-scroll">
+                        <div class="quote-mark">"</div>
+                        <blockquote class="success-text">
+                            NUAT Labs delivered our 7nm AI accelerator chip ahead of schedule
+                            with exceptional performance. Their RTL-to-GDSII expertise is unmatched.
+                        </blockquote>
+                        <div class="success-stats">
+                            <div class="success-stat">
+                                <span class="stat-num">2.5x</span>
+                                <span class="stat-desc">Performance Gain</span>
+                            </div>
+                            <div class="success-stat">
+                                <span class="stat-num">40%</span>
+                                <span class="stat-desc">Power Reduction</span>
+                            </div>
+                            <div class="success-stat">
+                                <span class="stat-num">6M</span>
+                                <span class="stat-desc">Gates</span>
+                            </div>
+                        </div>
+                        <div class="success-author">
+                            <div class="author-name">Dr. Sarah Chen</div>
+                            <div class="author-title">Chief Architect, NeuralTech Inc.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="success-card">
+                    <div class="success-content">
+                        <div class="quote-mark">"</div>
+                        <blockquote class="success-text">
+                            The IP cores from NUAT Labs integrated seamlessly into our SoC.
+                            First silicon success was a testament to their rigorous verification process.
+                        </blockquote>
+                        <div class="success-stats">
+                            <div class="success-stat">
+                                <span class="stat-num">99.8%</span>
+                                <span class="stat-desc">Test Coverage</span>
+                            </div>
+                            <div class="success-stat">
+                                <span class="stat-num">100%</span>
+                                <span class="stat-desc">First Pass</span>
+                            </div>
+                            <div class="success-stat">
+                                <span class="stat-num">3nm</span>
+                                <span class="stat-desc">Process</span>
+                            </div>
+                        </div>
+                        <div class="success-author">
+                            <div class="author-name">Michael Rodriguez</div>
+                            <div class="author-title">VP Engineering, ChipWorks</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="success-card">
+                    <div class="success-content">
+                        <div class="quote-mark">"</div>
+                        <blockquote class="success-text">
+                            From concept to tape-out in record time. NUAT Labs' design methodology
+                            and tools helped us achieve aggressive time-to-market goals.
+                        </blockquote>
+                        <div class="success-stats">
+                            <div class="success-stat">
+                                <span class="stat-num">8M</span>
+                                <span class="stat-desc">Transistors</span>
+                            </div>
+                            <div class="success-stat">
+                                <span class="stat-num">60%</span>
+                                <span class="stat-desc">Faster TTM</span>
+                            </div>
+                            <div class="success-stat">
+                                <span class="stat-num">14nm</span>
+                                <span class="stat-desc">Node</span>
+                            </div>
+                        </div>
+                        <div class="success-author">
+                            <div class="author-name">Dr. Priya Patel</div>
+                            <div class="author-title">CTO, IoT Solutions Ltd.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section dark-section">
+        <div class="binary-stream-bg"></div>
+        <div class="container">
+            <div class="cta-content animate-on-scroll">
+                <h2 class="cta-title">Ready to Build the Future?</h2>
+                <p class="cta-description">
+                    Partner with NUAT Labs for your next semiconductor innovation.
+                    From design to silicon, we bring your vision to life.
+                </p>
+                <div class="cta-actions">
+                    <button class="btn btn-primary btn-large">Start Your Project</button>
+                    <button class="btn btn-outline-light btn-large">Schedule Consultation</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4 class="footer-heading">Technology</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Process Nodes</a></li>
+                        <li><a href="#">Design Tools</a></li>
+                        <li><a href="#">Verification</a></li>
+                        <li><a href="#">Manufacturing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">RTL Design</a></li>
+                        <li><a href="#">Physical Design</a></li>
+                        <li><a href="#">DFT Services</a></li>
+                        <li><a href="#">Tape-out Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">IP Cores</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Interface IPs</a></li>
+                        <li><a href="#">Processor Cores</a></li>
+                        <li><a href="#">Security IPs</a></li>
+                        <li><a href="#">Analog/Mixed-Signal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About NUAT Labs</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2024 NUAT Labs. All rights reserved. Silicon excellence since 2020.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">LinkedIn</a>
+                    <a href="#" class="social-link">GitHub</a>
+                    <a href="#" class="social-link">Research</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

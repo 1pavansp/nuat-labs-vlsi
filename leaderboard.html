@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - ZOI Code | NUAT Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="zoicode.css">
+</head>
+
+<body class="zoicode-page">
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" style="display: flex; align-items: center; gap: 1rem; text-decoration: none;">
+                    <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+                        <rect width="40" height="40" rx="8" fill="url(#chipGradient)" />
+                        <rect x="8" y="8" width="24" height="24" rx="2" fill="#0A0A0A" stroke="#00A3E0"
+                            stroke-width="1" />
+                        <circle cx="20" cy="20" r="4" fill="#00A3E0" />
+                        <defs>
+                            <linearGradient id="chipGradient" x1="0" y1="0" x2="40" y2="40">
+                                <stop offset="0%" stop-color="#0066CC" />
+                                <stop offset="100%" stop-color="#00A3E0" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span class="logo-text" style="font-size: 1.25rem;">ZOI Code</span>
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="zoicode.html" class="nav-link">Problems</a>
+                <a href="leaderboard.html" class="nav-link nav-link-active">Leaderboard</a>
+                <a href="discuss.html" class="nav-link">Discuss</a>
+                <a href="interviews.html" class="nav-link">Interviews</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-ghost">Sign In</button>
+                <button class="btn btn-primary">Get Started</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="leaderboard-section">
+        <div class="container">
+            <div class="leaderboard-header">
+                <h1 class="page-title">Global Leaderboard</h1>
+                <p class="page-subtitle">Top VLSI engineers solving semiconductor design challenges</p>
+            </div>
+
+            <div class="leaderboard-filters">
+                <button class="filter-btn active" data-filter="global">🌍 Global</button>
+                <button class="filter-btn" data-filter="monthly">📅 This Month</button>
+                <button class="filter-btn" data-filter="weekly">⚡ This Week</button>
+            </div>
+
+            <div class="leaderboard-grid">
+                <!-- Top 3 Podium -->
+                <div class="podium-section">
+                    <div class="podium-item rank-2">
+                        <div class="podium-medal">🥈</div>
+                        <div class="podium-avatar">SK</div>
+                        <div class="podium-name">Sarah Kim</div>
+                        <div class="podium-stats">
+                            <div class="podium-score">2,847</div>
+                            <div class="podium-label">points</div>
+                        </div>
+                        <div class="podium-problems">142 solved</div>
+                    </div>
+
+                    <div class="podium-item rank-1">
+                        <div class="podium-medal">🥇</div>
+                        <div class="podium-avatar">RC</div>
+                        <div class="podium-name">Rahul Chen</div>
+                        <div class="podium-stats">
+                            <div class="podium-score">3,521</div>
+                            <div class="podium-label">points</div>
+                        </div>
+                        <div class="podium-problems">148 solved</div>
+                    </div>
+
+                    <div class="podium-item rank-3">
+                        <div class="podium-medal">🥉</div>
+                        <div class="podium-avatar">AP</div>
+                        <div class="podium-name">Alex Patel</div>
+                        <div class="podium-stats">
+                            <div class="podium-score">2,634</div>
+                            <div class="podium-label">points</div>
+                        </div>
+                        <div class="podium-problems">138 solved</div>
+                    </div>
+                </div>
+
+                <!-- Rankings Table -->
+                <div class="rankings-table">
+                    <div class="table-header">
+                        <div class="col-rank">Rank</div>
+                        <div class="col-user">User</div>
+                        <div class="col-score">Score</div>
+                        <div class="col-solved">Solved</div>
+                        <div class="col-streak">Streak</div>
+                    </div>
+
+                    <div class="table-body" id="rankingsBody">
+                        <!-- Rankings will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Your Stats Card -->
+                <div class="your-stats-card">
+                    <h3>Your Performance</h3>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-icon">🏆</div>
+                            <div class="stat-value">547</div>
+                            <div class="stat-label">Global Rank</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-icon">✓</div>
+                            <div class="stat-value">42</div>
+                            <div class="stat-label">Solved</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-icon">🔥</div>
+                            <div class="stat-value">7</div>
+                            <div class="stat-label">Day Streak</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-icon">⭐</div>
+                            <div class="stat-value">892</div>
+                            <div class="stat-label">Points</div>
+                        </div>
+                    </div>
+                    <div class="difficulty-breakdown">
+                        <h4>Difficulty Breakdown</h4>
+                        <div class="difficulty-bar">
+                            <span class="bar-label">Easy</span>
+                            <div class="bar-track">
+                                <div class="bar-fill bar-easy" style="width: 75%;">30/40</div>
+                            </div>
+                        </div>
+                        <div class="difficulty-bar">
+                            <span class="bar-label">Medium</span>
+                            <div class="bar-track">
+                                <div class="bar-fill bar-medium" style="width: 25%;">10/40</div>
+                            </div>
+                        </div>
+                        <div class="difficulty-bar">
+                            <span class="bar-label">Hard</span>
+                            <div class="bar-track">
+                                <div class="bar-fill bar-hard" style="width: 10%;">2/20</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="leaderboard.js"></script>
+</body>
+
+</html>

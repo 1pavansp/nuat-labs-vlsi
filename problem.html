@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2:1 Multiplexer - ZOI Code | NUAT Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="zoicode.css">
+    <link rel="stylesheet" href="problem-editor.css">
+</head>
+
+<body class="problem-page">
+    <!-- Header -->
+    <header class="header problem-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" style="display: flex; align-items: center; gap: 1rem; text-decoration: none;">
+                    <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+                        <rect width="40" height="40" rx="8" fill="url(#chipGradient)" />
+                        <rect x="8" y="8" width="24" height="24" rx="2" fill="#0A0A0A" stroke="#00A3E0"
+                            stroke-width="1" />
+                        <circle cx="20" cy="20" r="4" fill="#00A3E0" />
+                        <defs>
+                            <linearGradient id="chipGradient" x1="0" y1="0" x2="40" y2="40">
+                                <stop offset="0%" stop-color="#0066CC" />
+                                <stop offset="100%" stop-color="#00A3E0" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span class="logo-text" style="font-size: 1.25rem;">ZOI Code</span>
+                </a>
+            </div>
+            <div class="problem-title-header">
+                <span class="problem-number">#1</span>
+                <span class="problem-name">2:1 Multiplexer</span>
+                <span class="difficulty-badge difficulty-easy">Easy</span>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-ghost btn-sm">Solutions</button>
+                <button class="btn btn-ghost btn-sm">Discuss</button>
+                <button class="btn btn-primary btn-sm">Submit</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="problem-container">
+        <!-- Left Panel - Problem Description -->
+        <div class="problem-description">
+            <div class="description-tabs">
+                <button class="desc-tab active" data-tab="description">Description</button>
+                <button class="desc-tab" data-tab="hints">Hints</button>
+                <button class="desc-tab" data-tab="solutions">Solutions</button>
+            </div>
+
+            <div class="description-content" id="description">
+                <h2>Problem Statement</h2>
+                <p>Design a 2-to-1 multiplexer (MUX) in Verilog. A multiplexer selects one of several input signals and
+                    forwards the selected input to a single output line.</p>
+
+                <h3>Module Declaration</h3>
+                <div class="code-block">
+                    <pre><code>module mux_2to1 (
+    input wire a,      // Input 0
+    input wire b,      // Input 1
+    input wire sel,    // Select signal
+    output wire y      // Output
+);</code></pre>
+                </div>
+
+                <h3>Functionality</h3>
+                <ul>
+                    <li>When <code>sel = 0</code>, output <code>y = a</code></li>
+                    <li>When <code>sel = 1</code>, output <code>y = b</code></li>
+                </ul>
+
+                <h3>Example Test Cases</h3>
+                <div class="test-example">
+                    <div class="test-case">
+                        <strong>Test 1:</strong>
+                        <code>a=1, b=0, sel=0</code> → <code>y=1</code>
+                    </div>
+                    <div class="test-case">
+                        <strong>Test 2:</strong>
+                        <code>a=1, b=0, sel=1</code> → <code>y=0</code>
+                    </div>
+                    <div class="test-case">
+                        <strong>Test 3:</strong>
+                        <code>a=0, b=1, sel=1</code> → <code>y=1</code>
+                    </div>
+                </div>
+
+                <h3>Constraints</h3>
+                <ul>
+                    <li>Use combinational logic only</li>
+                    <li>No clock signal required</li>
+                    <li>All inputs/outputs are single-bit signals</li>
+                </ul>
+
+                <h3>Company Tags</h3>
+                <div class="company-tags">
+                    <span class="company-tag">NVIDIA</span>
+                    <span class="company-tag">Intel</span>
+                    <span class="company-tag">Qualcomm</span>
+                </div>
+            </div>
+
+            <div class="description-content hidden" id="hints">
+                <h2>Hints</h2>
+                <div class="hint-item">
+                    <div class="hint-number">💡 Hint 1</div>
+                    <p>Think about using a conditional (ternary) operator or an if-else statement.</p>
+                </div>
+                <div class="hint-item">
+                    <div class="hint-number">💡 Hint 2</div>
+                    <p>The assign statement can be used with a ternary operator: <code>assign y = sel ? b : a;</code>
+                    </p>
+                </div>
+                <div class="hint-item">
+                    <div class="hint-number">💡 Hint 3</div>
+                    <p>Alternatively, use an always block with a case statement based on sel.</p>
+                </div>
+            </div>
+
+            <div class="description-content hidden" id="solutions">
+                <h2>Solutions</h2>
+                <p class="locked-message">🔒 Submit your solution first to unlock community solutions!</p>
+            </div>
+        </div>
+
+        <!-- Vertical Divider -->
+        <div class="vertical-divider" id="verticalDivider"></div>
+
+        <!-- Right Panel - Code Editor -->
+        <div class="code-panel">
+            <div class="editor-header">
+                <select class="language-selector" id="languageSelector">
+                    <option value="verilog" selected>Verilog</option>
+                    <option value="systemverilog">SystemVerilog</option>
+                    <option value="vhdl">VHDL</option>
+                </select>
+                <div class="editor-actions">
+                    <button class="btn-icon" title="Reset Code">↻</button>
+                    <button class="btn-icon" title="Settings">⚙</button>
+                </div>
+            </div>
+
+            <div class="code-editor" id="codeEditor">
+                <div class="line-numbers" id="lineNumbers">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                    <div>9</div>
+                    <div>10</div>
+                </div>
+                <textarea class="code-textarea" id="codeTextarea" spellcheck="false">module mux_2to1 (
+    input wire a,
+    input wire b,
+    input wire sel,
+    output wire y
+);
+    // Write your code here
+    
+endmodule</textarea>
+            </div>
+
+            <div class="editor-footer">
+                <button class="btn btn-outline btn-run" id="runBtn">▶ Run Code</button>
+                <button class="btn btn-primary" id="submitBtn">Submit Solution</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Panel - Test Cases & Results -->
+    <div class="bottom-panel" id="bottomPanel">
+        <div class="panel-tabs">
+            <button class="panel-tab active" data-panel="testcases">Testcases</button>
+            <button class="panel-tab" data-panel="results">Results</button>
+            <button class="panel-tab" data-panel="waveform">Waveform</button>
+            <button class="panel-tab" data-panel="synthesis">Synthesis</button>
+        </div>
+
+        <div class="panel-content" id="panel-testcases">
+            <div class="test-case-tabs">
+                <button class="test-tab active" data-test="1">Case 1</button>
+                <button class="test-tab" data-test="2">Case 2</button>
+                <button class="test-tab" data-test="3">Case 3</button>
+                <button class="test-tab" data-test="4">Case 4</button>
+            </div>
+            <div class="test-case-content">
+                <div class="test-inputs">
+                    <h4>Input:</h4>
+                    <code>a = 1, b = 0, sel = 0</code>
+                </div>
+                <div class="test-expected">
+                    <h4>Expected Output:</h4>
+                    <code>y = 1</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-content hidden" id="panel-results">
+            <div class="results-header">
+                <div class="result-status">
+                    <span class="status-icon">⏳</span>
+                    <span>Ready to run...</span>
+                </div>
+            </div>
+            <div class="results-list" id="resultsList">
+                <p class="empty-message">Run your code to see results</p>
+            </div>
+        </div>
+
+        <div class="panel-content hidden" id="panel-waveform">
+            <div class="waveform-controls">
+                <button class="btn-icon" title="Zoom In">🔍+</button>
+                <button class="btn-icon" title="Zoom Out">🔍−</button>
+                <button class="btn-icon" title="Fit">⇔</button>
+                <span class="time-marker">Time: 0ns - 100ns</span>
+            </div>
+            <canvas id="waveformCanvas" class="waveform-canvas"></canvas>
+        </div>
+
+        <div class="panel-content hidden" id="panel-synthesis">
+            <div class="synthesis-metrics">
+                <div class="metric-card">
+                    <div class="metric-label">Technology</div>
+                    <select class="tech-selector">
+                        <option value="3nm">3nm</option>
+                        <option value="7nm" selected>7nm</option>
+                        <option value="28nm">28nm</option>
+                    </select>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Gate Count</div>
+                    <div class="metric-value" id="gateCount">-</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Power (mW)</div>
+                    <div class="metric-value" id="powerValue">-</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Area (µm²)</div>
+                    <div class="metric-value" id="areaValue">-</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Delay (ns)</div>
+                    <div class="metric-value" id="delayValue">-</div>
+                </div>
+            </div>
+            <div class="synthesis-log" id="synthesisLog">
+                <p class="log-line">Click "Run Code" to synthesize...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="problem-solver.js"></script>
+</body>
+
+</html>
